@@ -1,0 +1,12 @@
+voting application
+a functionality where user can give to the given set of candidate
+
+model
+routes
+1. voting functionality
+
+1. user sign in/ sing up
+2. see the list of candidate
+3. vote one the candidate 
+4. there is route which shows the list of candidate ans show their live vote count
+5. 
