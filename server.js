@@ -1,16 +1,21 @@
-const express = require('express'); // Import the Express framework
-const app = express(); 
+const express = require('express')
+const app = express();
+const db = require('./db');
+require('dotenv').config();
 
-const bodyParser = require('body-parser');
-
-// require('dotenv').config();
-
-
-
-app.use(bodyParser.json());  // middleware
-
+const bodyParser = require('body-parser'); 
+app.use(bodyParser.json()); // req.body
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, ()=> {
-    console.log('listening to PORT 3000');
+// Import the router files
+const userRoutes = require('./routes/userRoutes');
+const candidateRoutes = require('./routes/candidateRoutes');
+
+// Use the routers
+app.use('/', userRoutes);
+app.use('/candidate', candidateRoutes);
+
+
+app.listen(PORT, ()=>{
+    console.log('listening on port 3000');
 })
