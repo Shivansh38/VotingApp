@@ -12,7 +12,7 @@ const userRoutes = require('./routes/userRoutes');
 const candidateRoutes = require('./routes/candidateRoutes');
 
 // Use the routers
-app.use('/', userRoutes);
+app.use('/user', userRoutes);
 app.use('/candidate', candidateRoutes);
 
 
